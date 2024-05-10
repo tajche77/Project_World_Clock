@@ -22,6 +22,17 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+  let belgradeElement = document.querySelector("#belgrade");
+  if (belgradeElement) {
+    let belgradeDateElement = belgradeElement.querySelector(".date");
+    let belgradeTimeElement = belgradeElement.querySelector(".time");
+    let belgradeTime = moment().tz("Europe/Madrid");
+
+    belgradeDateElement.innerHTML = belgradeTime.format("MMMM Do YYYY");
+    belgradeTimeElement.innerHTML = belgradeTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
